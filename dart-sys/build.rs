@@ -674,7 +674,6 @@ pub fn codegen() {
 	let dart_dl_glue_path = dart_sdk_include_dir.join("dart_api_dl.c");
 	cc::Build::new()
 		.file(dart_dl_glue_path)
-		.include(dart_sdk_include_dir)
 		.compile("dart_api_dl");
 }
 
