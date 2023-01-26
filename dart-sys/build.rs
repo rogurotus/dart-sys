@@ -672,9 +672,10 @@ pub fn codegen() {
 		.expect("ERROR: failed to write dart_api_dl bindings to file");
 
 	let dart_dl_glue_path = dart_sdk_include_dir.join("dart_api_dl.c");
+
 	cc::Build::new()
-		.file(dart_dl_glue_path)
-		.compile("dart_api_dl");
+		.file("dart-sdk/trampo.c")
+		.compile("trampo");
 }
 
 fn main() {
